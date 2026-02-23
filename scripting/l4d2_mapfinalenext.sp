@@ -29,7 +29,7 @@ public Plugin myinfo =
     name        = "[L4D2] mapfinalenext",
     author      = "MAKS",
     description = "L4D2 Coop Map Finale Next",
-    version     = "1.7",
+    version     = "1.7.1",
     url         = "forums.alliedmods.net/showthread.php?p=2436146"
 };
 
@@ -46,11 +46,6 @@ public void OnMapStart()
 {
     ig_coop = 0;
     GetCurrentMap(sg_l4d2Map, sizeof(sg_l4d2Map) - 1);
-    if (sg_l4d2Map[0] == 'C')    // fix
-    {
-        sg_l4d2Map[0] = 'c';
-    }
-
     GetConVarString(FindConVar("mp_gamemode"), sg_mode, sizeof(sg_mode) - 1);
 
     if (!strcmp(sg_mode, "coop", true))
@@ -73,7 +68,7 @@ public void OnMapStart()
 public Action HxTimerNextMap(Handle timer)
 {
     ig_rs = 0;
-    if (StrContains(sg_l4d2Map, "c1m", true) != -1)
+    if (StrContains(sg_l4d2Map, "c1m", false) != -1)
     {
 #if HX_FIXES_LUX
         L4D2_ChangeLevel("c6m1_riverbank");
@@ -82,7 +77,7 @@ public Action HxTimerNextMap(Handle timer)
 #endif
         return Plugin_Stop;
     }
-    if (StrContains(sg_l4d2Map, "c6m", true) != -1)
+    if (StrContains(sg_l4d2Map, "c6m", false) != -1)
     {
 #if HX_FIXES_LUX
         L4D2_ChangeLevel("c2m1_highway");
@@ -91,7 +86,7 @@ public Action HxTimerNextMap(Handle timer)
 #endif
         return Plugin_Stop;
     }
-    if (StrContains(sg_l4d2Map, "c2m", true) != -1)
+    if (StrContains(sg_l4d2Map, "c2m", false) != -1)
     {
 #if HX_FIXES_LUX
         L4D2_ChangeLevel("c3m1_plankcountry");
@@ -100,7 +95,7 @@ public Action HxTimerNextMap(Handle timer)
 #endif
         return Plugin_Stop;
     }
-    if (StrContains(sg_l4d2Map, "c3m", true) != -1)
+    if (StrContains(sg_l4d2Map, "c3m", false) != -1)
     {
 #if HX_FIXES_LUX
         L4D2_ChangeLevel("c4m1_milltown_a");
@@ -109,7 +104,7 @@ public Action HxTimerNextMap(Handle timer)
 #endif
         return Plugin_Stop;
     }
-    if (StrContains(sg_l4d2Map, "c4m", true) != -1)
+    if (StrContains(sg_l4d2Map, "c4m", false) != -1)
     {
 #if HX_FIXES_LUX
         L4D2_ChangeLevel("c5m1_waterfront");
@@ -118,7 +113,7 @@ public Action HxTimerNextMap(Handle timer)
 #endif
         return Plugin_Stop;
     }
-    if (StrContains(sg_l4d2Map, "c5m", true) != -1)
+    if (StrContains(sg_l4d2Map, "c5m", false) != -1)
     {
 #if HX_FIXES_LUX
         L4D2_ChangeLevel("c13m1_alpinecreek");
@@ -127,7 +122,7 @@ public Action HxTimerNextMap(Handle timer)
 #endif
         return Plugin_Stop;
     }
-    if (StrContains(sg_l4d2Map, "c13m", true) != -1)
+    if (StrContains(sg_l4d2Map, "c13m", false) != -1)
     {
 #if HX_FIXES_LUX
         L4D2_ChangeLevel("c8m1_apartment");
@@ -136,7 +131,7 @@ public Action HxTimerNextMap(Handle timer)
 #endif
         return Plugin_Stop;
     }
-    if (StrContains(sg_l4d2Map, "c8m", true) != -1)
+    if (StrContains(sg_l4d2Map, "c8m", false) != -1)
     {
 #if HX_FIXES_LUX
         L4D2_ChangeLevel("c9m1_alleys");
@@ -145,7 +140,7 @@ public Action HxTimerNextMap(Handle timer)
 #endif
         return Plugin_Stop;
     }
-    if (StrContains(sg_l4d2Map, "c9m", true) != -1)
+    if (StrContains(sg_l4d2Map, "c9m", false) != -1)
     {
 #if HX_FIXES_LUX
         L4D2_ChangeLevel("c10m1_caves");
@@ -154,7 +149,7 @@ public Action HxTimerNextMap(Handle timer)
 #endif
         return Plugin_Stop;
     }
-    if (StrContains(sg_l4d2Map, "c10m", true) != -1)
+    if (StrContains(sg_l4d2Map, "c10m", false) != -1)
     {
 #if HX_FIXES_LUX
         L4D2_ChangeLevel("c11m1_greenhouse");
@@ -163,7 +158,7 @@ public Action HxTimerNextMap(Handle timer)
 #endif
         return Plugin_Stop;
     }
-    if (StrContains(sg_l4d2Map, "c11m", true) != -1)
+    if (StrContains(sg_l4d2Map, "c11m", false) != -1)
     {
 #if HX_FIXES_LUX
         L4D2_ChangeLevel("c12m1_hilltop");
@@ -172,7 +167,7 @@ public Action HxTimerNextMap(Handle timer)
 #endif
         return Plugin_Stop;
     }
-    if (StrContains(sg_l4d2Map, "c12m", true) != -1)
+    if (StrContains(sg_l4d2Map, "c12m", false) != -1)
     {
 #if HX_FIXES_LUX
         L4D2_ChangeLevel("c7m1_docks");
@@ -181,7 +176,7 @@ public Action HxTimerNextMap(Handle timer)
 #endif
         return Plugin_Stop;
     }
-    if (StrContains(sg_l4d2Map, "c7m", true) != -1)
+    if (StrContains(sg_l4d2Map, "c7m", false) != -1)
     {
 #if HX_FIXES_LUX
         L4D2_ChangeLevel("c14m1_junkyard");
