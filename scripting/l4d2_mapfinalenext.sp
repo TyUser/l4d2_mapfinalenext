@@ -13,7 +13,7 @@
 #define HX_FIXES_LUX 1
 
 #if HX_FIXES_LUX
-    #include <l4d2_changelevel>
+#include <l4d2_changelevel>
 #endif
 
 #pragma newdecls required
